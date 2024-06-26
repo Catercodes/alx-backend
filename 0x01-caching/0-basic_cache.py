@@ -20,11 +20,13 @@ class BasicCache(BaseCaching):
         """
 
         if key is None or item is None:
+            """Checks if key is None"""
             return
         self.cache_data[key] = item
 
     def get(self, key):
         """Must return the value in self.cache_data linked to key."""
         if key is None or key not in self.cache_data:
+            """ checks if key exits"""
             return None
         return self.cache_data[key]
