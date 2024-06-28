@@ -24,21 +24,6 @@ class Server:
 
     # def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
     #        pass
-    def index_range(self, page, page_size):
-        """
-
-        a function named index_range that takes two integer
-        arguments page and page_size.
-        The function should return a tuple of size two containing
-        a start index and an end index corresponding to the range
-        of indexes to return in a list for those particular pagination
-        parameters
-        """
-
-        start_index = (page - 1) * page_size
-        end_index = page * page_size
-        return start_index, end_index
-
     def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
         """Implement a method named get_page that takes two
         integer arguments page with
@@ -65,3 +50,18 @@ class Server:
         if start_index >= len(dataset):
             return []
         return dataset[start_index:end_index]
+
+    def index_range(self, page, page_size):
+        """
+
+        a function named index_range that takes two integer
+        arguments page and page_size.
+        The function should return a tuple of size two containing
+        a start index and an end index corresponding to the range
+        of indexes to return in a list for those particular pagination
+        parameters
+        """
+
+        start_index = (page - 1) * page_size
+        end_index = page * page_size
+        return start_index, end_index
